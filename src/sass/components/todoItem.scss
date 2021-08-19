@@ -1,0 +1,45 @@
+.todo__item {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 1rem 0;
+  padding: 1rem 0;
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-subtle-celeste;
+  }
+
+  &-id {
+    flex: 0 0 5%;
+  }
+  &-title {
+    flex: 0 0 15%;
+  }
+
+  &-desc {
+    flex: 0 0 40%;
+    letter-spacing: 0.8px;
+  }
+  &-priority {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 15%;
+  }
+  &-status {
+    flex: 0 0 10%;
+  }
+  &-dots {
+    flex: 0 0 5%;
+    display: flex;
+    align-items: center;
+  }
+
+  &-status-checkbox {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+  }
+}

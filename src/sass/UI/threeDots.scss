@@ -1,0 +1,51 @@
+.three__dot {
+  position: relative;
+  &-icon {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  &-icon span {
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: $color-pink-light;
+    //  &:not(:last-child) {
+    //    margin-bottom: 5px;
+    //  }
+    // padding: 0.15rem;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
+
+  &-dropdown {
+    width: 10rem;
+    position: absolute;
+    top: 45%;
+    left: -396%;
+    background: #f7f7f7;
+    padding: 0.8rem 0.8rem;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    border-radius: 0.8rem;
+
+    button {
+      width: 100%;
+      text-align: left;
+      padding: 0.6rem;
+      border: none;
+      outline: none;
+      // background: rgb(121, 119, 119);
+      background-color: #f7f7f7;
+      color: #777;
+      cursor: pointer;
+      margin-bottom: 2px;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}

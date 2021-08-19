@@ -1,0 +1,67 @@
+.add__todo {
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: $shadow-medium;
+
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 576px) {
+    width: 90%;
+  }
+
+  &-header h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  &-inputs {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.form__group {
+  margin: 0.8rem 0;
+
+  &-label {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  &-input {
+    font-family: inherit;
+    font-size: 1.6rem;
+    width: 100%;
+    border: 1px solid $color-subtle-candy;
+    outline: none;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    // box-shadow: $shadow-small;
+  }
+
+  &-textarea {
+    @extend .form__group-input;
+  }
+
+  &-select {
+    @extend .form__group-input;
+  }
+}
+
+.add__todo-action {
+  &-btn {
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: $color-tea-light;
+    font-size: 1.6rem;
+    box-shadow: $shadow-small;
+    color: $color-purple-light;
+  }
+}

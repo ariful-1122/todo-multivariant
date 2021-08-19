@@ -1,0 +1,49 @@
+.list-wrapper {
+  width: 100%;
+}
+
+.todo__lists {
+  &-header h2 {
+    color: $color-tea-light;
+    border-bottom: 1px solid $color-purple-subtle;
+    font-size: 5rem;
+    font-weight: 400;
+  }
+
+  &-body {
+    margin-top: 0.5rem;
+  }
+
+  &-headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-bottom: 1px solid $color-tea-light;
+    padding: 1rem 0;
+
+    &-id {
+      flex: 0 0 5%;
+    }
+    &-title {
+      flex: 0 0 15%;
+    }
+
+    &-desc {
+      flex: 0 0 40%;
+    }
+    &-priority {
+      display: flex;
+      justify-content: center;
+      flex: 0 0 15%;
+    }
+    &-status {
+      flex: 0 0 10%;
+    }
+    &-dots {
+      flex: 0 0 5%;
+    }
+  }
+}

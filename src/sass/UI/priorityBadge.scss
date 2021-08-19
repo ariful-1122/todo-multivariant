@@ -1,0 +1,22 @@
+.priority__badge {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 2rem;
+  font-weight: 300;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+
+  &.high {
+    background-color: rgba($color-pink-light, 0.15);
+    color: #ff9393;
+  }
+  &.medium {
+    background-color: rgba($color-rose-light, 0.15);
+    color: #ff93ff;
+  }
+  &.low {
+    background-color: rgba($color-blue-light, 0.15);
+    color: $color-blue-light;
+  }
+}

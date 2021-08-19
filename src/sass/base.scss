@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  /* background: rgb(30, 20, 77); */
+  font-family: "Georama", sans-serif;
+  font-size: 1.4rem;
+  // background-color: #ddd;
+  font-weight: 400;
+}
+
+.main {
+  min-height: calc(100vh - 7rem);
+  width: 100%;
+  padding: 1rem calc(3vw + 5px);
+}
