@@ -17,6 +17,11 @@
   }
   &-title {
     flex: 0 0 15%;
+
+    &-date {
+      font-size: 1rem;
+      color: #777;
+    }
   }
 
   &-desc {

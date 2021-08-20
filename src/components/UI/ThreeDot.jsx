@@ -33,7 +33,7 @@ const ThreeDot = (props) => {
           <Link to={`/edit-todo/${props.id}`}>
             <button>Edit</button>
           </Link>
-          <button onClick={props.onClick}>Delete</button>
+          <button onClick={props.onShowModal}>Delete</button>
         </div>
       )}
     </div>

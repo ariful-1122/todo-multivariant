@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import AddTodo from "./components/todo/AddTodo";
 import EditTodo from "./components/todo/EditTodo";
 import ListTodo from "./components/todo/ListTodo";
+import Modal from "./components/UI/Modal";
 
 const App = () => {
   return (

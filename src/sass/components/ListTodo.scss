@@ -3,9 +3,15 @@
 }
 
 .todo__lists {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $color-purple-subtle;
+  }
   &-header h2 {
     color: $color-tea-light;
-    border-bottom: 1px solid $color-purple-subtle;
     font-size: 5rem;
     font-weight: 400;
   }
@@ -45,5 +51,19 @@
     &-dots {
       flex: 0 0 5%;
     }
+  }
+}
+
+.filter__lists {
+  border: 3px solid $color-champage-light;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0.5rem;
+
+  &-select {
+    border: 1px solid $color-subtle-candy;
+    width: 20rem;
+    padding: 0.4rem;
+    cursor: pointer;
   }
 }

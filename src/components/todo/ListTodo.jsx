@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../UI/Card";
 import TodoItem from "./TodoItem";
+import Modal from "../../components/UI/Modal";
 import { useEffect, useState } from "react";
 // import Todos from "../../utils/data";
 
@@ -13,14 +14,6 @@ const ListTodo = () => {
       : [];
     setTodos(allTodo);
   }, []);
-
-  const deleteHandler = (id) => {
-    console.log("delete clicked");
-    const deletedItem = todos.filter((item) => item.id !== id);
-    console.log(todos);
-    setTodos(deletedItem);
-    localStorage.setItem("todos", JSON.stringify(deletedItem));
-  };
 
   const checkHandler = (id) => {
     const checkedItem = JSON.parse(localStorage.getItem("todos"));
@@ -36,11 +29,41 @@ const ListTodo = () => {
     localStorage.setItem("todos", JSON.stringify(checkedItem));
   };
 
+  const filterHandler = (e) => {
+    const data = JSON.parse(localStorage.getItem("todos"));
+    const filtered = data.filter((item) => item.priority === e.target.value);
+    setTodos(filtered);
+  };
+
+  const deleteHandler = (id) => {
+    const data = JSON.parse(localStorage.getItem("todos"));
+    const itemIndex = data.findIndex((item) => item.id === id);
+    data.splice(itemIndex, 1);
+    setTodos(data);
+    localStorage.setItem("todos", JSON.stringify(data));
+  };
+
   return (
     <Card className="list-wrapper">
       <div className="todo__lists">
         <div className="todo__lists-header">
           <h2>Todo List</h2>
+          <div className="filter__lists">
+            <h3 className="filter__lists-title">Filter:</h3>
+            <select
+              // defaultValue="selected"
+              onChange={filterHandler}
+              className="filter__lists-select"
+            >
+              {/* <option disabled>Filter</option> */}
+              <option selected disabled>
+                Chose Priority
+              </option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
         </div>
         <div className="todo__lists-body">
           <div className="todo__lists-headings">
@@ -54,8 +77,8 @@ const ListTodo = () => {
           {todos &&
             todos.map((todo, i) => (
               <TodoItem
-                onCheckItem={checkHandler}
                 onDeleteItem={deleteHandler}
+                onCheckItem={checkHandler}
                 key={i + 1}
                 todo={todo}
                 id={i + 1}
