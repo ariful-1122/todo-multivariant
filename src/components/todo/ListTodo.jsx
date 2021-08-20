@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     const allTodo = localStorage.getItem("todos")
@@ -48,6 +49,13 @@ const ListTodo = () => {
       <div className="todo__lists">
         <div className="todo__lists-header">
           <h2>Todo List</h2>
+          <div className="search__bar">
+            <input
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              type="text"
+            />
+          </div>
           <div className="filter__lists">
             <h3 className="filter__lists-title">Filter:</h3>
             <select
@@ -75,15 +83,21 @@ const ListTodo = () => {
             <div className="todo__lists-headings-dots"></div>
           </div>
           {todos &&
-            todos.map((todo, i) => (
-              <TodoItem
-                onDeleteItem={deleteHandler}
-                onCheckItem={checkHandler}
-                key={i + 1}
-                todo={todo}
-                id={i + 1}
-              />
-            ))}
+            todos
+              .filter((item) =>
+                searchText === ""
+                  ? item
+                  : item.title.toLowerCase().includes(searchText.toLowerCase())
+              )
+              .map((todo, i) => (
+                <TodoItem
+                  onDeleteItem={deleteHandler}
+                  onCheckItem={checkHandler}
+                  key={i + 1}
+                  todo={todo}
+                  id={i + 1}
+                />
+              ))}
         </div>
       </div>
     </Card>
