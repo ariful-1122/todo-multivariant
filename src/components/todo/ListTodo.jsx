@@ -51,6 +51,7 @@ const ListTodo = () => {
           <h2>Todo List</h2>
           <div className="search__bar">
             <input
+              placeholder="Search"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               type="text"
@@ -87,7 +88,10 @@ const ListTodo = () => {
               .filter((item) =>
                 searchText === ""
                   ? item
-                  : item.title.toLowerCase().includes(searchText.toLowerCase())
+                  : item.title
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase()) ||
+                    item.desc.toLowerCase().includes(searchText.toLowerCase())
               )
               .map((todo, i) => (
                 <TodoItem
