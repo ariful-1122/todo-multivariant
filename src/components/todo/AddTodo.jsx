@@ -11,7 +11,7 @@ const AddTodo = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
-  const [priority, setPriority] = useState("");
+  const [priority, setPriority] = useState("Priority");
   const history = useHistory();
 
   const addTodo = (e) => {
@@ -98,9 +98,8 @@ const AddTodo = () => {
               value={priority}
               onChange={(e) => setPriority(e.target.value)}
               className="form__group-select"
-              name=""
-              id=""
             >
+              <option disabled>Priority</option>
               <option value="high">High</option>
               <option value="medium">Medium</option>
               <option value="low">Low</option>
